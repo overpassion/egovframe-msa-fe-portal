@@ -1,0 +1,13 @@
+---
+applications:
+  - name: egov-portal # CF push 시 생성되는 이름
+    memory: 2048M # 메모리
+    timeout : 180 # health_check_timeout Maximum exceeded: max 180s
+    instances: 1 # 인스턴스 수
+    host: egov-portal # host 명으로 유일해야 함
+    command: npm run start:prodlg # 애플리케이션 실행 명령어
+    path: ./ # 배포될 애플리케이션의 위치
+    buildpack: nodejs_buildpack # cf buildpacks 명령어로 nodejs buildpack 이름 확인
+    env:
+      NODE_ENV: production
+      TZ: 'Asia/Seoul'
