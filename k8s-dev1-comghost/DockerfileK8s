@@ -9,6 +9,9 @@ RUN mkdir -p ${APP_HOME}
 WORKDIR $APP_HOME
 
 COPY package*.json ./
+
+RUN npm config delete proxy
+RUN npm config delete https-proxy
 RUN npm install
 COPY . .
 RUN npm run build:${APP_TYPE}
