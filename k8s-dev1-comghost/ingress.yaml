@@ -10,7 +10,7 @@ metadata:
     name: frontend-portal-ingress
 spec:
   rules:
-    - host: http://portal.192.168.100.66.nip.io # TODO
+    - host: portal.192.168.100.66.nip.io # TODO
       http:
         paths:
           - path: /
