@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: frontend-portal-ingress
+  labels:
+    env: production
+    tier: frontend
+    app: portal
+    name: frontend-portal-ingress
+spec:
+  rules:
+    - host: http://portal.192.168.100.66.nip.io:8080 # TODO
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: frontend-portal
+              servicePort: 3000
